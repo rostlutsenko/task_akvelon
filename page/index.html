@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Akvelon task</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header__wrapper">
+        <h2 class="header">Invoices</h2>
+      </div>
+      <div class="actions__wrapper">
+        <div class="sub-header__wrapper">
+          <h3 class="sub-header">Actions</h3>
+        </div>
+        <div class="buttons__wrapper">
+          <button class="btn btn__add">Add new</button>
+        </div>
+      </div>
+      <div class="invoices__wrapper">
+        <div class="sub-header__wrapper">
+          <h3 class="sub-header">Invoices</h3>
+        </div>
+        <table class="results">
+          <thead>
+            <tr>
+              <th>Create</th>
+              <th>No</th>
+              <th>Supply</th>
+              <th>Comment</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="header__wrapper">
+        <h2 class="header">Create invoice</h2>
+      </div>
+      <div class="create__wrapper">
+        <form class="create__form">
+          <div class="inner__form">
+            <div class="container">
+              <span>Nubmer:</span>
+              <input
+                type="text"
+                name="number"
+                placeholder="Enter number"
+                required
+              />
+            </div>
+            <div class="container">
+              <span>Invoice date:</span>
+              <input
+                type="date"
+                name="invoice_date"
+                min="1970-01-01"
+                max="2019-12-31"
+                required
+              />
+            </div>
+            <div class="container">
+              <span>Suppty date:</span>
+              <input
+                type="date"
+                name="supply_date"
+                min="1970-01-01"
+                max="2019-12-31"
+                required
+              />
+            </div>
+            <div class="container">
+              <span>Comment:</span>
+              <textarea
+                class="comment"
+                name="comment"
+                cols="30"
+                rows="3"
+                maxlength="160"
+              ></textarea>
+            </div>
+          </div>
+          <input class="btn btn__save" type="submit" value="Save" />
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

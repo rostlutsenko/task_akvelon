@@ -1,0 +1,186 @@
+$main_bg: #f1f3f6;
+$header_color: #778096;
+$header_pseudo_bg: #e4e6e9;
+$btn_bg: #4973ff;
+$btn_bg_hover: #88a4ff;
+$input_border: #d9d9d9;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Arial", Helvetica, sans-serif;
+}
+
+.btn {
+  padding: 0.75em 2.5em;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  background: $btn_bg;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: $btn_bg_hover;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem;
+
+  background: $main_bg;
+}
+
+.header__wrapper {
+  position: relative;
+  margin: 0 0 2rem 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 150%;
+    width: 0.35rem;
+    top: -25%;
+    left: 0;
+    background: $header_pseudo_bg;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0.1rem;
+    width: 80%;
+    top: 50%;
+    right: 0;
+    background: $header_pseudo_bg;
+  }
+}
+
+.actions__wrapper,
+.invoices__wrapper,
+.create__wrapper {
+  margin: 0 0 2rem 0;
+  padding: 2rem;
+  border: 1px solid #e9e9e9;
+  background: #fff;
+}
+
+.header {
+  margin: 0 0 0 2rem;
+  color: $header_color;
+}
+
+.sub-header__wrapper {
+  margin: 0 0 1rem 0;
+}
+
+.sub-header {
+  margin: 0;
+}
+
+.results {
+  width: 100%;
+  border-radius: 0.3rem;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  thead {
+    background: $main_bg;
+    color: #778096;
+
+    th:first-of-type {
+      border-top-left-radius: 0.5rem;
+    }
+    th:last-of-type {
+      border-top-right-radius: 0.5rem;
+    }
+  }
+
+  tbody {
+    color: #778096;
+
+    tr {
+      border-bottom: 2px solid $header_pseudo_bg;
+
+      td:nth-of-type(2) {
+        color: #567dff;
+      }
+    }
+  }
+
+  th {
+    text-align: left;
+  }
+
+  th,
+  td {
+    width: 25%;
+    padding: 1.5rem 1rem;
+  }
+}
+
+.create__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner__form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 1.5rem 0;
+  padding: 2rem 1rem;
+  border: 1px solid $input_border
+}
+
+.btn__save {
+  margin-left: auto;
+}
+
+.container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1.15rem;
+
+  span {
+    margin: 0 0 1rem 0;
+    font-weight: bold;
+  }
+
+  input {
+    margin: 0 1rem 2.5rem 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid $input_border;
+    border-radius: 0.3rem;
+    outline: none;
+    font-size: 1.15rem;
+  }
+  input::-webkit-input-placeholder {
+    color: $input_border;
+  }
+  input:-ms-input-placeholder {
+    color: $input_border;
+  }
+  input::placeholder {
+    color: $input_border;
+  }
+}
+
+.container:last-of-type {
+  width: 100%;
+}
+
+.comment {
+  padding: .5rem;
+  border: 1px solid $input_border;
+  border-radius: .3rem;
+}
