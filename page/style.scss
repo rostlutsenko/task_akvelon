@@ -3,6 +3,7 @@ $header_color: #778096;
 $header_pseudo_bg: #e4e6e9;
 $btn_bg: #4973ff;
 $btn_bg_hover: #88a4ff;
+$btn_delete: #ff1301;
 $input_border: #d9d9d9;
 
 * {
@@ -30,7 +31,41 @@ body {
   background: $btn_bg_hover;
 }
 
+.btn__edit,
+.btn__delete {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0.6;
+  font-size: 1.15rem;
+  outline: none;
+  cursor: pointer;
+
+  img {
+    height: 1.15rem;
+  }
+}
+
+.btn__edit {
+  border: none;
+  background: #fff;
+  color: $btn_bg;
+}
+
+.btn__delete {
+  border: none;
+  background: #fff;
+  color: $btn_delete;
+}
+
+.btn__edit:hover,
+.btn__delete:hover {
+  opacity: 1;
+}
+
 .wrapper {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 
@@ -57,7 +92,7 @@ body {
     content: "";
     position: absolute;
     height: 0.1rem;
-    width: 80%;
+    width: calc(100% - 13rem);
     top: 50%;
     right: 0;
     background: $header_pseudo_bg;
@@ -66,7 +101,7 @@ body {
 
 .actions__wrapper,
 .invoices__wrapper,
-.create__wrapper {
+.form_wrapper {
   margin: 0 0 2rem 0;
   padding: 2rem;
   border: 1px solid #e9e9e9;
@@ -122,12 +157,18 @@ body {
 
   th,
   td {
-    width: 25%;
-    padding: 1.5rem 1rem;
+    width: 22%;
+    padding: 1.5rem 0.5rem;
+  }
+
+  td:last-of-type {
+    button {
+      margin: 0 0 0.5rem 0;
+    }
   }
 }
 
-.create__form {
+.form {
   display: flex;
   flex-direction: column;
 }
@@ -137,7 +178,7 @@ body {
   flex-wrap: wrap;
   margin: 0 0 1.5rem 0;
   padding: 2rem 1rem;
-  border: 1px solid $input_border
+  border: 1px solid $input_border;
 }
 
 .btn__save {
@@ -180,7 +221,11 @@ body {
 }
 
 .comment {
-  padding: .5rem;
+  padding: 0.5rem;
   border: 1px solid $input_border;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
+}
+
+.d-none {
+  display: none;
 }

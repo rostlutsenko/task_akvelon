@@ -22,7 +22,41 @@ body {
   background: #88a4ff;
 }
 
+.btn__edit,
+.btn__delete {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0.6;
+  font-size: 1.15rem;
+  outline: none;
+  cursor: pointer;
+}
+.btn__edit img,
+.btn__delete img {
+  height: 1.15rem;
+}
+
+.btn__edit {
+  border: none;
+  background: #fff;
+  color: #4973ff;
+}
+
+.btn__delete {
+  border: none;
+  background: #fff;
+  color: #ff1301;
+}
+
+.btn__edit:hover,
+.btn__delete:hover {
+  opacity: 1;
+}
+
 .wrapper {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -46,7 +80,7 @@ body {
   content: "";
   position: absolute;
   height: 0.1rem;
-  width: 80%;
+  width: calc(100% - 13rem);
   top: 50%;
   right: 0;
   background: #e4e6e9;
@@ -54,7 +88,7 @@ body {
 
 .actions__wrapper,
 .invoices__wrapper,
-.create__wrapper {
+.form_wrapper {
   margin: 0 0 2rem 0;
   padding: 2rem;
   border: 1px solid #e9e9e9;
@@ -104,11 +138,14 @@ body {
 }
 .results th,
 .results td {
-  width: 25%;
-  padding: 1.5rem 1rem;
+  width: 22%;
+  padding: 1.5rem 0.5rem;
+}
+.results td:last-of-type button {
+  margin: 0 0 0.5rem 0;
 }
 
-.create__form {
+.form {
   display: flex;
   flex-direction: column;
 }
@@ -161,6 +198,10 @@ body {
   padding: 0.5rem;
   border: 1px solid #d9d9d9;
   border-radius: 0.3rem;
+}
+
+.d-none {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
